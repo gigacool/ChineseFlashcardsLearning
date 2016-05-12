@@ -1,0 +1,23 @@
+{
+  "name": "chineseLearningFlashcards",
+  "version": "0.0.1",
+  "author": "Cédric Hartland <cedric.hartland@gmail.com>",
+  "description": "small simple Chinese language learning platform using flashcards",
+  "contributors": [
+    "Cédric Hartland <cedric.hartland@gmail.com>"
+  ],
+  "scripts": {
+    "start": "node ./back-office/server"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "open": "0.0.5"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
