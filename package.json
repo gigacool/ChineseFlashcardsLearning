@@ -13,8 +13,8 @@
     "node": ">=0.10"
   },
   "dependencies": {
-    "express": "^4.13.4",
-    "open": "0.0.5"
+    "compression": "^1.6.2",
+    "express": "^4.13.4"
   },
   "devDependencies": {
     "chai": "^3.5.0",

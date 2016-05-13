@@ -11,11 +11,9 @@ The dictionary used will (probably) be CEDICT with an emphasis made on character
 
 Step 0 involves a classical web site application where user creates an account. Possible second step involves transition to Electron based full client side application.
 
-
-
 0. prepare backend
- * [ ] *prepare database to query dictionary*
- * [ ] *create RESTful API to access resources*
+ * [x] *prepare database to query dictionary*
+ * [x] *create (first version of) RESTful API to access resources*
 1. explore Chinese characters
  * [ ] *display word of the day on welcome*
  * [ ] *display flashcards* with pagination
@@ -50,3 +48,8 @@ I do not plan on using fancy technologies in this project and will go for classi
 I would like to investigate the possibility to relive long forgotten functional programming practice to see about potential benefits.
 
 I also wish to investigate for user management in either a simple way or a clean way (using e.g. filters (?)).
+
+### Open questions
+
+* What DBMS to use ?
+* Do we need REST API for all possible resources or can we tune something specific (issue comes from dataset being large if all characters are taken into account, data is much more reasonable for HSK data only).
