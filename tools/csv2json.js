@@ -30,7 +30,8 @@ fs.readFile('./hsk1-6.csv', 'utf8', function(error, data) {
       level:'Word group according to Hanyu Shuiping Kaoshi(HSK) learning set level (from 1 to 6)',
       character:'Simplified Chinese characters for the word',
       pinyin:'Pin yin writing for the word',
-      translations:'Array of translations, following CEDICT dictionary order, with some simplification'
+      translations:'Array of translations, following CEDICT dictionary order, with some simplification',
+      details:['CL in translations reference the classifier']
     },
     data:data.split('\n')
       .filter(filterComments)

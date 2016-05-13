@@ -23,6 +23,17 @@ var wordsById = words.reduce(function(wordsById, word){
   return wordsById;
 },{});
 
+function filter(words, request){
+  var start = decodeURIComponent(request.query.start);
+  var number = decodeURIComponent(request.query.number);
+  if(!isNaN(start) || !isNaN(number)){
+    start = parseInt(start) || 0;
+    number = parseInt(number) || 100;
+    return words.slice(start, start + number);
+  }
+  return words;
+}
+
 // ----------------------------------------------------------------------------
 
 console.info('setup http server...');
@@ -37,24 +48,26 @@ server
 console.info('Getting API ready');
 server.route('/REST/words')
   .get(function(request, response){
-    var start = decodeURIComponent(request.query.start);
-    var number = decodeURIComponent(request.query.number);
-    if(!isNaN(start) || !isNaN(number)){
-      start = parseInt(start) || 0;
-      number = parseInt(number) || 100;
-      return response.send({words:words.slice(start, start + number), total:words.length});
-    }
-    return response.send({words:words, total:words.length});
+    response.send({
+      words:filter(words, request),
+      total:words.length
+    });
   });
 
 server.route('/REST/words/:id')
   .get(function(request, response){
-    response.send({word:wordsById[request.params.id]});
+    response.send({
+      word:wordsById[request.params.id]
+    });
   });
 
 server.route('/REST/words/levels/:id')
   .get(function(request, response){
-    response.send({words:wordsByLevel[request.params.id]});
+    var words = wordsByLevel[request.params.id];
+    response.send({
+      words:filter(words, request),
+      total:words.length
+    });
   });
 
 server.listen(3000);
