@@ -42,8 +42,7 @@ server = express();
 server.use(require('compression')());
 
 server
-  .route('/')
-  .get(express.static('./front-office'));
+  .use('/',express.static('./front-office'));
 
 console.info('Getting API ready');
 server.route('/REST/words')

@@ -1,13 +1,67 @@
 <!DOCTYPE html>
 <html>
-
 <head lang="en">
   <meta charset="UTF-8">
   <title>Chinese Learning</title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css' >
+  <link rel="stylesheet" href="stylesheets/screen.css" media="screen" charset="utf-8">
 </head>
 
 <body>
-  <h2>Chinese Learning Flashcards</h2>
-</body>
+  <header>
+    <h1>Learn Chinese with Flashcards</h1>
+  </header>
+  <aside>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Flashcard set</a>
+      <a href="#">Flashcard set</a>
+      <a href="#">Flashcard set</a>
+      <a href="#about">About</a>
+    </nav>
+  </aside>
+  <div id="main-container" class="main-container">
+    <div id="home">
+
+
+    </div>
+  </div>
+  <footer>
+    <p>Brought to you with love by Cédric Hartland (<span id="from-to">since 2015</span>)</p>
+    <script>var element = document.getElementById("from-to");
+
+    element.innerHTML = '2015 - ' + new Date().getFullYear();
+
+    </script>
+  </footer>
+
+
+  <div style="display:none;">
+    <div id="home-template">
+      <div class="search-box">
+        <input id="search-input" type="text" placeholder="Search a word"></input>
+        <button id="search">Search</button>
+      </div>
+      <div class="results">
+        <div class="word-of-the-day">Loading...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- For this project, we aim at a simple application architecture using basic stack of
+  components around Backbone.js without using dependency management tools such as requirejs, no build steps
+  to optimize running code; overalln there should be nothing too fancy -->
+  <script src="sources/3rdParties/jquery/2.1.1/jquery.min.js"></script>
+  <script src="sources/3rdParties/jquery/plugins/tablesorter/2.0.5/jquery-tablesorter.min.js"></script>
+  <script src="sources/3rdParties/underscore/1.6.0/underscore.min.js"></script>
+  <script src="sources/3rdParties/handlebars/1.3.0/handlebars.min.js"></script>
+  <script src="sources/3rdParties/numeral/1.4.8/numeral.min.js"></script>
+  <script src="sources/3rdParties/backbone/1.1.2/backbone.min.js"></script>
+
+  <script src="sources/chineseLearning/application.js"></script>
+  <script>
+    window.chineseLearning.application = new window.chineseLearning.routes.Router();
+    Backbone.history.start();
+  </script>
+  </body>
 </html>

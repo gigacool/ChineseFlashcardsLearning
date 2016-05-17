@@ -1,0 +1,192 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?18f0y6');
+    src:    url('fonts/icomoon.eot?18f0y6#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?18f0y6') format('truetype'),
+        url('fonts/icomoon.woff?18f0y6') format('woff'),
+        url('fonts/icomoon.svg?18f0y6#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Since I create a dark theme, the default scroll bar is not adapted, I
+tune it a bit for webkit browsers. More work could be needed for other
+browsers. */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+header {
+  position:absolute;
+  top: 0;
+  left: 180px;
+  right: 0;
+  height: 60px;
+}
+
+header h1 {
+  margin: 0;
+  padding: 0 10px;
+  line-height: 60px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+aside {
+  position: absolute;
+  left: 0;
+  top:0;
+  bottom: 0;
+  width: 180px;
+  background-color: #464656;
+}
+
+aside a {
+  position: relative;
+  display: block;
+  width: 160px;
+  height: 60px;
+  font-size: 14px;
+  line-height: 60px;
+  overflow: hidden;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 10px;
+  transition: all 0.4s;
+}
+aside a:before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  content: "\e88a";
+}
+
+aside a:hover {
+  background-color: #565686;;
+}
+
+footer {
+  position:absolute;
+  bottom: 0;
+  left: 180px;
+  right: 0;
+  height: 60px;
+}
+
+footer p {
+  text-align: right;
+  line-height: 60px;
+  font-size: 12px;
+  margin: 0;
+  padding: 0 20px 0 0px;
+}
+
+.main-container {
+  position:absolute;
+  top: 60px;
+  left: 180px;
+  right: 0;
+  bottom: 60px;
+}
+
+.search-box {
+  position: relative;
+  margin: 30px auto;
+  width: 600px;
+}
+
+.search-box input {
+  line-height: 30px;
+  height: 30px;
+  font-size: 18px;
+  width: 400px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  padding: 0 0 0 10px;
+  border-bottom: solid thin rgba(202, 202, 202, 0.2);
+}
+
+input {
+  transition: all 0.4s;
+}
+
+input:focus{
+  border-bottom: solid thin rgba(202, 202, 202, 1);
+
+  outline: none;
+  
+}
+.search-box button {
+  color: #eee;
+  background-color: #464656;
+  border: none;
+  line-height: 30px;
+  height: 30px;
+  font-size: 18px;
+  width: 180px;
+  padding: 0;
+  cursor: pointer;
+  transition: all .4s;
+}
+button:focus{
+  outline:none;
+}
+.search-box button:hover {
+  background-color:#565686;
+}
+
+.word-of-the-day {
+
+  text-align: center;
+  margin: 40px auto;
+}
+
+.word-of-the-day .word {
+  font-size: 80px;
+}
+
+.word-of-the-day .pinyin {
+  font-size: 16px;
+}
+
+.word-of-the-day .translation {
+  margin: 10px 0;
+  font-size: 20px;
+}
